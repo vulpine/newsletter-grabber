@@ -1,0 +1,54 @@
+Newsletter-Grabber
+==================
+
+What is this?
+-------------
+
+This is a simple (at present) script to grab newsletter lists
+and/or other data which will need to be queried from our databases
+for marketing, development, and other purposes.
+
+Traditionally, IT Operations has manually had to query these
+databases and often request the correct SQL from the developers to
+extract this data. This script is intended to simplify matters by
+doing it automatically.
+
+Usage
+-----
+
+newsletter.rb sitename
+
+Configuration
+-------------
+
+At the moment, this script will take an argument on the command line
+stating which site - configured in its config.yaml - we care about, 
+running whichever queries are listed there with the credentials given.
+Therefore, to add a query to it, add a block of yaml thus:
+
+generic-site:
+  name: 'Generic forum'
+  host: localhost
+  database: genericforum
+  user: newsletter
+  password: password
+  query: "SELECT foo FROM bar WHERE blee = '1'"
+  type: mysql
+
+This should be relatively self-explanatory. The name value is for
+readability only; it isn't used except in debug output. The top-level
+value is the sitename used as an argument to run the script; so, in
+this case, running newsletter.rb generic-site will run this query.
+
+WARNING: The query will be parsed literally and with no sanity checking
+whatsoever. It is your and the developer's responsibility to ensure it
+is safe. I would recommend creating a specific user for newsletter
+collection with SELECT privileges only.
+
+This code at the moment outputs directly to STDOUT. I will add file
+saving shortly.
+
+Who?
+----
+
+Blame Lawrence (lawrence.matthews@futurenet.com) if this doesn't work.

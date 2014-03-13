@@ -1,0 +1,8 @@
+test:
+  name: 'Test'
+  host: localhost
+  database: whocares
+  user: user
+  password: password
+  query: "query goes here"
+  type: mysql
