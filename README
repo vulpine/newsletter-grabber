@@ -8,15 +8,17 @@ This is a simple (at present) script to grab newsletter lists
 and/or other data which will need to be queried from our databases
 for marketing, development, and other purposes.
 
-Traditionally, IT Operations has manually had to query these
-databases and often request the correct SQL from the developers to
-extract this data. This script is intended to simplify matters by
-doing it automatically.
+Traditionally, we had to manually query these databases and often 
+request the correct SQL from the developers to extract this data. 
+This script is intended to simplify matters by doing the first bit
+automatically.
 
 Usage
 -----
 
 newsletter.rb sitename
+
+What's sitename? Read on...
 
 Configuration
 -------------
@@ -51,4 +53,4 @@ saving shortly.
 Who?
 ----
 
-Blame Lawrence (lawrence.matthews@futurenet.com) if this doesn't work.
+Blame me (lmatthews@roguefox.net) if this doesn't work.
